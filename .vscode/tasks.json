@@ -1,0 +1,101 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "haas-studio: Config",
+      "type": "shell",
+      "command": "aos",
+      "args": [
+        "make",
+        "@haaseduk1",
+        "-c",
+        "config"
+      ],
+      "presentation": {
+        "focus": true
+      }
+    },
+    {
+      "label": "haas-studio: Make",
+      "type": "shell",
+      "command": "aos",
+      "args": [
+        "make"
+      ],
+      "presentation": {
+        "focus": true
+      }
+    },
+    {
+      "label": "haas-studio: Burn",
+      "type": "shell",
+      "command": "aos",
+      "args": [
+        "burn"
+      ],
+      "presentation": {
+        "focus": true
+      }
+    },
+    {
+      "label": "haas-studio: Serial Monitor",
+      "type": "shell",
+      "command": "aos",
+      "args": [
+        "monitor",
+        "",
+        "1500000"
+      ],
+      "presentation": {
+        "focus": true,
+        "panel": "dedicated"
+      }
+    },
+    {
+      "label": "haas-studio: Clean",
+      "type": "shell",
+      "command": "aos",
+      "args": [
+        "make",
+        "clean"
+      ],
+      "presentation": {
+        "focus": true
+      }
+    },
+    {
+      "label": "dummy_aos3.3.0",
+      "command": "pwd"
+    },
+    {
+      "label": "compile-extension",
+      "type": "npm",
+      "script": "compile",
+      "group": "build",
+      "presentation": {
+        "focus": false,
+        "panel": "shared"
+      },
+      "problemMatcher": ["$tsc"]
+    },
+    {
+      "label": "watch-extension",
+      "type": "npm",
+      "script": "watch",
+      "group": "build",
+      "isBackground": true,
+      "presentation": {
+        "focus": false,
+        "panel": "shared"
+      },
+      "problemMatcher": ["$tsc-watch"]
+    }
+  ],
+  "osx": {
+    "options": {
+      "env": {
+        "PATH": "/Users/djcarlogujilde/.aliot/miniconda3/envs/_aos_env:/Users/djcarlogujilde/.aliot/miniconda3/envs/_aos_env/bin:${env:PATH}"
+      }
+    }
+  }
+}

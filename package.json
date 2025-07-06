@@ -1,0 +1,71 @@
+{
+  "name": "haas-studio-auto-translator",
+  "displayName": "HAAS Studio Auto Translator",
+  "description": "Automatically translate Chinese text in HAAS Studio extension to English",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "haasStudioTranslator.translateAll",
+        "title": "Translate All Text",
+        "category": "HAAS Translator"
+      },
+      {
+        "command": "haasStudioTranslator.toggleAutoTranslate",
+        "title": "Toggle Auto Translation",
+        "category": "HAAS Translator"
+      }
+    ],
+    "configuration": {
+      "title": "HAAS Studio Auto Translator",
+      "properties": {
+        "haasStudioTranslator.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable auto-translation of HAAS Studio text"
+        },
+        "haasStudioTranslator.translationService": {
+          "type": "string",
+          "enum": ["google", "microsoft"],
+          "default": "google",
+          "description": "Translation service to use"
+        },
+        "haasStudioTranslator.apiKey": {
+          "type": "string",
+          "default": "",
+          "description": "API key for translation service (if required)"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.74.0",
+    "@types/node": "16.x",
+    "@typescript-eslint/eslint-plugin": "^5.45.0",
+    "@typescript-eslint/parser": "^5.45.0",
+    "eslint": "^8.28.0",
+    "glob": "^8.0.3",
+    "@vscode/test-electron": "^2.2.0",
+    "typescript": "^4.9.4"
+  },
+  "dependencies": {
+  }
+}
