@@ -76,7 +76,9 @@
         "focus": false,
         "panel": "shared"
       },
-      "problemMatcher": ["$tsc"]
+      "problemMatcher": [
+        "$tsc"
+      ]
     },
     {
       "label": "watch-extension",
@@ -88,7 +90,17 @@
         "focus": false,
         "panel": "shared"
       },
-      "problemMatcher": ["$tsc-watch"]
+      "problemMatcher": [
+        "$tsc-watch"
+      ]
+    },
+    {
+      "type": "npm",
+      "script": "install",
+      "group": "clean",
+      "problemMatcher": [],
+      "label": "npm: install",
+      "detail": "install dependencies from package"
     }
   ],
   "osx": {
